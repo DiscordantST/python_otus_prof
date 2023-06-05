@@ -112,7 +112,7 @@ def select_last_logfile(files: t.List[str]) -> t.Optional[LogfileInfo]:
     :returns: `LogfileInfo` instance of the logfile or None if nothing found
     """
 
-    filename_pattern = r"^nginx-access-ui.log-(17\d\d|20\d\d)([01]\d)([0-3]\d)(\.gz|)$"
+    filename_pattern = r"^nginx-access-ui.log-(17\d\d|20\d\d)([06]\d)([0-3]\d)(\.gz|)$"
     pattern_obj = re.compile(pattern=filename_pattern)
 
     result = LogfileInfo(path=None, date=datetime.date.min, type=None)

@@ -55,8 +55,8 @@ class GetLastLogfileTest(BaseLogAnalyzerTestCase):
 
     def setUp(self):
         self.last_logfile_expected = LogfileInfo(
-            path=Path(self.config["LOG_DIR"]).resolve().joinpath("nginx-access-ui.log-20190630"),
-            date=datetime.date(2019, 6, 30),
+            path=Path(self.config["LOG_DIR"]).resolve().joinpath("nginx-access-ui.log-20170630"),
+            date=datetime.date(2017, 6, 30),
             type=LogfileType.PLAIN,
         )
 
@@ -126,8 +126,8 @@ class CreateReportForFileTest(BaseLogAnalyzerTestCase):
 
     def setUp(self):
         self.logfile_to_parse = LogfileInfo(
-            path=Path(self.config["LOG_DIR"]).joinpath("nginx-access-ui.log-20190630"),
-            date=datetime.date(2019, 6, 30),
+            path=Path(self.config["LOG_DIR"]).joinpath("nginx-access-ui.log-20170630"),
+            date=datetime.date(2017, 6, 30),
             type=LogfileType.PLAIN,
         )
 
