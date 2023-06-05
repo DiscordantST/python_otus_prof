@@ -22,7 +22,7 @@ jobs:
         run: |
           cd "./homework_01_advanced_basics/homework/log_analyzer/"
           flake8 *.py
-      - name: Test with unittest
+      - name: Test
         run: |
-          python3 tests.py
+          python tests.py
       - run: echo "Finished. The job's status is ${{ job.status }}."
