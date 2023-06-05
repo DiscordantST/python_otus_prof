@@ -24,5 +24,6 @@ jobs:
           flake8 *.py
       - name: Test
         run: |
+          cd "./homework_01_advanced_basics/homework/log_analyzer/"
           python tests.py
       - run: echo "Finished. The job's status is ${{ job.status }}."
