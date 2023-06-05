@@ -20,6 +20,7 @@ jobs:
           pip install flake8
       - name: Run linters
         run: |
+          cd ./homework_01_advanced_basics/homework/log_analyzer/
           flake8 *.py
       - name: Test with unittest
         run: |
