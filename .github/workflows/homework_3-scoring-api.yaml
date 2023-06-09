@@ -3,7 +3,7 @@ name: Scoring API
 on:
   push:
     branches:
-      - homework_03_apiscroll
+      - homework_03
     paths:
       - "homework_03_apiscroll/**"
 
