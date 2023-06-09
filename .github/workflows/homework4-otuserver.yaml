@@ -16,6 +16,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install apache2-utils
+          sudo apt-get install wrk
       - name: Clone testing repo
         working-directory: ./homework_4_otusserver/www
         run: git clone https://github.com/s-stupnikov/http-test-suite www
