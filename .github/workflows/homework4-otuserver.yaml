@@ -32,4 +32,4 @@ jobs:
       - name: Load testing results with Apache Benchmark
         run: ab -n 50000 -c 100 -r http://127.0.0.1:8080/httptest/dir2/page.html
       - name: Load testing with "wrk"
-        run: wrk -c100 -d5m http://127.0.0.1:8080/httptest/dir2/page.html
+        run: wrk -t12 -c400 -d30s http://127.0.0.1:8080/httptest/dir2/page.html
