@@ -1,4 +1,4 @@
-name: Scoring API Test
+name: Otus run server
 
 on: [push]
 
