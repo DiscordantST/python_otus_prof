@@ -1,0 +1,22 @@
+name: Scoring API
+
+on:
+  push:
+    branches:
+      - homework_03_apiscroll
+    paths:
+      - "homework_03_apiscroll/**"
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+      - name: Test with unittest
+        working-directory: ./homework_03_apiscroll
+        run: python3 -m unittest -v
