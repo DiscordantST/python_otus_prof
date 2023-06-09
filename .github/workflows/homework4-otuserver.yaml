@@ -26,7 +26,7 @@ jobs:
         working-directory: ./homework_4_otusserver
         run: python3 httpd.py -p 8080 -w 2 -r www &
       - name: Test http server
-        working-directory: ./homework_4_otusserver/www
+        working-directory: ./homework_4_otusserver
         run: python3 httptest.py
       - name: Load testing results with Apache Benchmark
         run: ab -n 50000 -c 100 -r http://127.0.0.1:8080/httptest/dir2/page.html
