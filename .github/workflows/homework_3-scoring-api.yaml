@@ -1,11 +1,6 @@
 name: Scoring API
 
-on:
-  push:
-    branches:
-      - homework_03
-    paths:
-      - "homework_03_apiscroll/**"
+on: [push]
 
 jobs:
   tests:
