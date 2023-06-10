@@ -17,6 +17,12 @@ jobs:
           sudo apt-get update
           sudo apt-get install apache2-utils
           sudo apt-get install rpm
+      - name: Install dependencies
+        working-directory: ./homework_5_uWSGI
+        run: |
+          python -m pip install --upgrade pip
+          pip3 install requests
       - name: Test http server
         working-directory: ./homework_5_uWSGI/ip2w
-        run: python3 tests.py
+        run: python3 -m unittest -v tests.py
+
