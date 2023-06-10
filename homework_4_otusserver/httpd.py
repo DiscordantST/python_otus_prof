@@ -242,7 +242,7 @@ class HTTPServer(object):
                 connection, client_address = self.socket.accept()
                 logging.debug('[Worker {}] Request from {}'.format(os.getpid(), client_address))
                 process_request(connection, client_address, self.document_root)
-            except OSError:
+            finally:
                 if connection:
                     connection.close()
 
