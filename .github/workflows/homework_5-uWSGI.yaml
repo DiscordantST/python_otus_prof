@@ -19,4 +19,4 @@ jobs:
           sudo apt-get install rpm
       - name: Test http server
         working-directory: ./homework_5_uWSGI/ip2w
-        run: python3 ip2w_test.py
+        run: python3 tests.py
