@@ -25,6 +25,7 @@ jobs:
         working-directory: ./homework_6_django
         run: |
           cp local_settings.py.template config/local_settings.py
+          python3 manage.py migrate
           python3 manage.py test
           
 
