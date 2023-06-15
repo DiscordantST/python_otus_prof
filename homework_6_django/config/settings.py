@@ -7,7 +7,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
-    "django.contrib.auth.group",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
