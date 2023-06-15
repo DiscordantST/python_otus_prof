@@ -25,6 +25,5 @@ jobs:
       - name: Test http server
         working-directory: ./homework_6_django
         run: |
-          python3 manage.py migrate
           python3 manage.py test
 
