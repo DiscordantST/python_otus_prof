@@ -1,0 +1,30 @@
+name: Django
+
+on: [push]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+      - name: Install app tool
+        run: |
+          sudo apt-get update
+          sudo apt-get install apache2-utils
+      - name: Install dependencies
+        working-directory: ./homework_6_django
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-dev.txt
+          cp local_settings.py.template config/local_settings.py
+      - name: Test http server
+        working-directory: ./homework_6_django
+        run: |
+          python3 manage.py migrate
+          python3 manage.py test
+
