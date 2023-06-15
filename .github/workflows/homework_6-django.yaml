@@ -26,4 +26,5 @@ jobs:
         working-directory: ./homework_6_django
         run: |
           python3 manage.py test
+          
 
