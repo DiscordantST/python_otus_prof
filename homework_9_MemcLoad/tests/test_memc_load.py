@@ -43,15 +43,3 @@ def test_complete():
    op.add_option("--adid", action="store", default="127.0.0.1:11211")
    op.add_option("--dvid", action="store", default="127.0.0.1:11211")
 
-   (opts, args) = op.parse_args([])
-
-   device_memc = {
-      "idfa": opts.idfa,
-      "gaid": opts.gaid,
-      "adid": opts.adid,
-      "dvid": opts.dvid,
-   }
-
-
-
-
