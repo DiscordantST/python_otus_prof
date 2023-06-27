@@ -1,17 +1,9 @@
 #!/bin/sh
 set -xe
 
-yum install -y  gcc \
-				make \
-				protobuf \
-				protobuf-c \
-				protobuf-c-compiler \
-				protobuf-c-devel \
-				python-devel \
-				python-setuptools \
-				gdb 
-
-ulimit -c unlimited
-cd /tmp/otus/
-protoc-c --c_out=. deviceapps.proto
-python setup.py test
+pip3 install pip==22.3.1 --break-system-packages
+pip3 install -r requirements.txt
+# protoc-c --c_out=. deviceapps.proto
+# protoc --python_out=. deviceapps.proto
+pip3 install .
+python3 setup.py test

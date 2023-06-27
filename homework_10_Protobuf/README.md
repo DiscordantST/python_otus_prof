@@ -1,26 +1,37 @@
-## Задание
-### Protobuf Serializer
+you need install:
 
-*Задание*: дописать extension (pb.c):
+$ pip install -r requirements.txt
+$ pip instal .
+protoc-c --c_out=. deviceapps.proto
+protoc --python_out=. deviceapps.proto
 
-* deviceapps_xwrite_pb должна принимать на вход iterable со словарями и путь до файла, писать запакованные в protobuf словари в файл, сжав gzip'ом. Каждая protobuf сообщенька должна идти вместе с заголовком, определенным pbheader_t. Функция возвращает количество записанных байт.
-* [опционально] deviceapps_xread_pb читает записанные deviceapps_xwrite_pb сообщеньки из файла в виде словарей. Возвращает генератор со словарями. https://eli.thegreenplace.net/2012/04/05/implementing-a-generatoryield-in-a-python-c-extension
-* расширить и дописать тесты соответствующим образом.
+RUN:
 
-*С чего начать:*
-```
-$ docker run -ti --rm -v /Users/s.stupnikov/Coding/otus/lection14/:/tmp/otus/ centos /bin/bash
-[root@309dadf4ada2 /]# cd tmp/otus/
-[root@309dadf4ada2 otus]# sh start.sh
-...
-```
+pip3 install -r requirements.txt
+pip3 instal .
+python3 setup.py test
 
-*Цель задания*: освежить навыки программирования на C, ближе познакомиться с C API, получить представление о проектировании и создании расширений.
+result:
+copying build/lib.linux-x86_64-cpython-311/pb.cpython-311-x86_64-linux-gnu.so -> 
+test_read (tests.test_pb.TestPB.test_read) ... ok
+test_write (tests.test_pb.TestPB.test_write) ... ok
 
-*Критерии успеха*: задание __опционально__, критерием успеха является работающий согласно заданию код, для которого написаны минимальные тесты, проверено соответствие pep8, написана документация с примерами запуска (боевого и тестов), в README, например. Далее успешность определяется code review.
 
-## Deadline
-Задание нужно сдать через неделю. То есть ДЗ, выданное в понедельник, нужно сдать до следующего занятия в понедельник. Код, отправленный на ревью в это время, рассматривается в первом приоритете. Нарушение делайна (пока) не карается, пытаться сдать ДЗ можно до конца курсы. Но код, отправленный с опозданием, когда по плану предполагается работа над более актуальным ДЗ, будет рассматриваться в более низком приоритете без гарантий по высокой скорости проверки
+From docker:
 
-## Обратная связь
-Cтудент коммитит все необходимое в свой github/gitlab репозитарий. Далее необходимо зайти в ЛК, найти занятие, ДЗ по которому выполнялось, нажать “Чат с преподавателем” и отправить ссылку. После этого ревью и общение на тему ДЗ будет происходить в рамках этого чата.
+docker build --rm -t %youname% .
+docker run -it --rm %youname%
+
+command: bash start.sh 
+
+copying build/lib.linux-x86_64-cpython-311/pb.cpython-311-x86_64-linux-gnu.so -> 
+test_read (tests.test_pb.TestPB.test_read) ... ok
+test_write (tests.test_pb.TestPB.test_write) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.005s
+
+OK
+
+
+
